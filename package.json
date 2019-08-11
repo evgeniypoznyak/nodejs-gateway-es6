@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-gateway",
+  "name": "nodejs-gateway-es6",
   "author": "Evgeniy Poznyak",
   "license": "MIT",
   "description": "NodeJS API Gateway. Handling JWT and Microservices.",

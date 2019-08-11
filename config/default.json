@@ -2,5 +2,5 @@
   "JWT_PRIVATE_KEY": "my_JWT_PRIVATE_KEY",
   "MONGO_USERS": "mongodb://localhost:8002/Users",
   "MONGO_LOGGING": "mongodb://localhost:8003/GatewayLogging",
-  "API_SKILLS": "http://localhost:1111/skills"
+  "API_SKILLS": "http://localhost:1111/skills/"
 }
