@@ -1,15 +1,13 @@
-module.exports = function (err, req, res, next) { // must be after all routes and middleware(s)
-    // error
-    // warn
-    // info
-    // verbose
-    // debug
-    // silly
-
-    console.log({
-        level: 'error',
-        message: err.message,
-        meta: err
+export default (req, res) => {
+    console.warn({
+        level: 'warn',
+        message: 'Something failed',
+        meta: {
+            headers: req.headers,
+            body: req.body,
+            params: req.params,
+            cookies: req.cookies,
+        },
     });
 
     return res.status(500) // internal server error

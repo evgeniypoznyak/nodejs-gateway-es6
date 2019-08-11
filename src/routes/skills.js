@@ -66,12 +66,21 @@ router.delete('/:id', auth, async (req, res) => {
         level: 'info',
         message: 'Processing delete request...',
     });
-    const result = await axios.delete(api + req.params.id, {httpsAgent: agent});
-    logger.log({
-        level: 'info',
-        message: 'Data for delete request was successfully processed: ',
-        meta: JSON.stringify(result.data),
-    });
+    try {
+        const result = await axios.delete(api + req.params.id, {httpsAgent: agent});
+        logger.log({
+            level: 'info',
+            message: 'Data for delete request was successfully processed: ',
+            meta: JSON.stringify(result.data),
+        });
+        return res.sendStatus(result.data);
+    } catch (e) {
+        logger.warn({
+            level: 'warn',
+            message: `Bad Request for skill id: ${req.params.id}`,
+            meta: JSON.stringify(e.message),
+        });
+    }
     return res.sendStatus(result.data);
 });
 
